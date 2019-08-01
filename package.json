@@ -2,9 +2,10 @@
     "description": "A material-design styled list item",
     "keywords": [
         "web-components",
+        "web-component",
         "polymer",
         "item",
-        "gfs"
+        "GFS"
     ],
     "repository": {
         "type": "git",
@@ -15,18 +16,17 @@
     "license": "Apache-2.0",
     "devDependencies": {
         "webmat": "^0.2.0",
+        "wct-browser-legacy": "^1.0.1",
         "@polymer/iron-demo-helpers": "^3.0.1",
         "@polymer/iron-icon": "^3.0.0-pre.26",
         "@polymer/iron-icons": "^3.0.0-pre.26",
         "@polymer/test-fixture": "^4.0.1",
-        "wct-browser-legacy": "^1.0.1",
-        "@webcomponents/webcomponentsjs": "^2.0.0",
-        "@polymer/iron-test-helpers": "^3.0.0-pre.26",
+        "@webcomponents/webcomponentsjs": "^2.0.0"
     },
     "scripts": {
-        "test": "wct"
+        "start": "polymer serve"
     },
-    "version": "1.0.0",
+    "version": "1.0.0-preview.1",
     "main": "gfs-item.js",
     "author": "Global Freight Solutions",
     "dependencies": {
