@@ -6,7 +6,7 @@ import { IronControlState } from '@polymer/iron-behaviors/iron-control-state.js'
 class GfsItem extends mixinBehaviors([IronButtonStateImpl, IronControlState], PolymerElement) {
     static get template() {
         return html`
-            <style include="gfs-styles">
+            <style>
                 :host {
                     padding: 10px;
                     display: block;
@@ -26,10 +26,14 @@ class GfsItem extends mixinBehaviors([IronButtonStateImpl, IronControlState], Po
 
                 :host(:focus), .gfs-item:focus {
                     outline: none;
+
+                    @apply --gfs-item-focused;
                 }
 
                 :host([disabled]), .paper-item[disabled] {
                     color: rgba(0, 0, 0, .35)
+
+                    @apply --gfs-item-disabled;
                 }
 
                 :host([active]), :host(.iron-selected) {

@@ -26,7 +26,7 @@
     "scripts": {
         "start": "polymer serve"
     },
-    "version": "2.0.0-preview.1",
+    "version": "2.0.0-preview.2",
     "main": "gfs-item.js",
     "author": "Global Freight Solutions",
     "dependencies": {

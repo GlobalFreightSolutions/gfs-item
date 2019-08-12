@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <title>gfs-item demo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+        <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2.0.0/webcomponents-loader.js"></script>
+        <script type="module">
+            import '@polymer/iron-demo-helpers/demo-snippet.js';
+            import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+            import '@polymer/iron-icons/iron-icons.js';
+            import '../gfs-item.js';
+            import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+
+            const template = html
+                `<custom-style>
+                    <style is="custom-style" include="demo-pages-shared-styles"></style>
+                </custom-style>`;
+            document.body.appendChild(template.content);
+        </script>
+        <custom-style>
+            <style is="custom-style">
+                :host {
+                    --gfs-item: {
+                        line-height: 24px;
+                    }
+                }
+
+                div[role="listbox"] {
+                    border: 1px solid #e5e5e5;
+                }
+            </style>
+        </custom-style>
+    </head>
+    <body>
+        <div class="vertical-section-container centered"></div>
+            <demo-snippet>
+                <template>
+                    <h3>initially</h3>
+                    <div role="listbox">
+                        <gfs-item>Item 1</gfs-item>
+                        <gfs-item>Item 2</gfs-item>
+                        <gfs-item>Item 3</gfs-item>
+                    </div>
+                </template>
+            </demo-snippet>
+
+            <demo-snippet>
+                <template>
+                    <custom-style>
+                        <style is="custom-style">
+                            gfs-item.focused {
+                                --gfs-item-focused: {
+                                    background: lightblue;
+                                    font-weight: bold;
+                                }
+                            }
+
+                        </style>
+                    </custom-style>
+                    <div role="listbox">
+                        <gfs-item class="focused">Item 1</gfs-item>
+                        <gfs-item class="focused">Item 2</gfs-item>
+                        <gfs-item class="focused">Item 3</gfs-item>
+                    </div>
+                    </template>
+                </template>
+            </demo-snippet>
+
+            <demo-snippet>
+                <template>
+                    <p>Element with an icon</p>
+                    <div role="listbox">
+                        <gfs-item icon="view-list">Item 1</gfs-item>
+                        <gfs-item icon="view-list">Item 2</gfs-item>
+                        <gfs-item icon="view-list">Item 3</gfs-item>
+                    </div>
+                </template>
+            </demo-snippet>
+        </div>
+    </body>
+</html>

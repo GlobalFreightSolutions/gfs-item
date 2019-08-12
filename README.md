@@ -1,9 +1,41 @@
-## Installation
-Due to a bug on `iron-overlay-backdrop`, if you want to override the styles, you must add them in the root file (ex. index.html).
-This effect projects that start with polymer-starter-kit
+## GFS Item
+`<gfs-item>` is a interactive list item.
 
-Read more for the bug here:
-https://github.com/Polymer/polymer-starter-kit/issues/154
+### Install
+
+```bash
+$ npm i --save @gfsdeliver/gfs-item
+```
+
+### Import In a HTML file:
+
+```html
+<html>
+    <head>
+        <script type="module">
+            import '@gfsdeliver/gfs-item/gfs-item.js';
+        </script>
+    </head>
+    <body>
+        <gfs-item>Item</gfs-item>
+    </body>
+</html>
+```
+
+### In a Polymer 3 element
+```js
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@gfsdeliver/gfs-item/gfs-item.js';
+
+class CustomElement extends PolymerElement {
+    static get template() {
+        return html`
+            <gfs-item>Item</gfs-item>
+        `;
+    }
+}
+customElements.define('custom-element', CustomElement);
+```
 
 ## Properties
 Property | Description
@@ -11,22 +43,14 @@ Property | Description
 active   | dialog header, wrapped on a "h2" element tag
 disabled | dialog content, wrapped on a "p" element tag
 
-## Example
-
-```html
-<gfs-item on-click='console'>Item 1</gfs-item>
-<gfs-item icon="view-list">Item 2</gfs-item>
-<gfs-item selected>Item 3</gfs-item>
-<gfs-item disabled>Item 4</gfs-item>
-
-```
-
-
 ## Styling
 Custom property | Description | Default
 ----------------|-------------|----------
+--gfs-item | Mixin applied to the item | {}
 --gfs-item-selected-color | Color of the a selected item | `var(--black-color)`
 --gfs-item-selected-background | Background color of the a selected item | `rgba(236, 236, 236, 0.7)`
 --gfs-item-selected-font-weight | Font weight of a selected item | `500`
---gfs-item-selected | Mixin applied to the item | {}
+--gfs-item-selected | Mixin applied to the selected item | {}
+--gfs-item-focused | Mixin applied to the focused item | {}
+--gfs-item-disabled | Mixin applied to the disabled item | {}
 
